@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigInteger;
+import java.util.List;
 
 @Data
 @Builder
@@ -20,4 +21,6 @@ public class Application {
     private String lastName;
     private String email;
     private String phone;
+
+    private List<Experience> exps;
 }
