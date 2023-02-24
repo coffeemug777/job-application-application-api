@@ -28,7 +28,7 @@ public class ApplicationController {
 
 
     @GetMapping("application/all")
-    public List<Application> getAll(@PathVariable BigInteger id) {
+    public List<Application> getAll() {
         return this.applicationService.getAll();
     }
 }
