@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ApplicationService {
@@ -32,5 +33,22 @@ public class ApplicationService {
 
     public Application find(String id) {
         return this.applicationRepository.findById(id).get();
+    }
+
+    public Application updateApplication(ApplicationRequest request, String id) {
+        Optional<Application> existing = this.applicationRepository.findById(id);
+        if(existing.isPresent()) {
+            return this.applicationRepository.save(Application.builder()
+                            .id(existing.get().getId())
+                            .email(request.getEmail())
+                            .exps(request.getExps())
+                            .firstName(request.getFirstName())
+                            .lastName(request.getLastName())
+                            .phone(request.getPhone())
+                            .userId(request.getUserId())
+                    .build());
+        } else {
+            return existing.orElseThrow();
+        }
     }
 }

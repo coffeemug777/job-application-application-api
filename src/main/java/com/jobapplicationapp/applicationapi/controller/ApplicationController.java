@@ -21,6 +21,16 @@ public class ApplicationController {
         return this.applicationService.addApplication(application);
     }
 
+    @PutMapping("application/update/{id}")
+    public Application update(@RequestBody ApplicationRequest request, @PathVariable String id) {
+        try {
+            return this.applicationService.updateApplication(request, id);
+        } catch (Exception e) {
+            System.out.println("asfds" + e);
+            return new Application();
+        }
+    }
+
     @GetMapping("application/{id}")
     public Application getById(@PathVariable String id) {
         return this.applicationService.find(id);
