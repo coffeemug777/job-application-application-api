@@ -15,7 +15,7 @@ import java.util.List;
 public class Application {
     @Id
     @Generated
-    private BigInteger id;
+    private String id;
     private String userId;
     private String firstName;
     private String lastName;

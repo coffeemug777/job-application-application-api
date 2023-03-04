@@ -30,7 +30,7 @@ public class ApplicationService {
         return this.applicationRepository.findAll();
     }
 
-    public Application find(BigInteger id) {
+    public Application find(String id) {
         return this.applicationRepository.findById(id).get();
     }
 }

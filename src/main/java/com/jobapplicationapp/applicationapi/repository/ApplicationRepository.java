@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.math.BigInteger;
 
 @Repository
-public interface ApplicationRepository extends MongoRepository<Application, BigInteger> {
+public interface ApplicationRepository extends MongoRepository<Application, String> {
 }

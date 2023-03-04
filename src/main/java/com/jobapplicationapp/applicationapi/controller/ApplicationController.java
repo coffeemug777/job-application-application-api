@@ -22,7 +22,7 @@ public class ApplicationController {
     }
 
     @GetMapping("application/{id}")
-    public Application getById(@PathVariable BigInteger id) {
+    public Application getById(@PathVariable String id) {
         return this.applicationService.find(id);
     }
 
